@@ -4,15 +4,13 @@ using UnityEngine.InputSystem;
 public class CameraController : MonoBehaviour
 {
     public Transform player;
-    public float smoothSpeed = 5;
     public Vector3 offset;
 
     // Rotating Camera
 
-    public float rotateSpeed = 5;
+    public float rotateSpeed = 5f;
     private Vector2 rotationInput;
-    public float rotationSpeed = 5f; // Sensitivity multiplier
-    public float distanceFromPlayer = 5f; // Camera distance
+    public float distanceFromPlayer = 5f; 
     private float currentAngle;
 
     private void Start()
@@ -29,20 +27,12 @@ public class CameraController : MonoBehaviour
 
     public void Update()
     {
-        currentAngle += rotationInput.x * rotationSpeed * Time.deltaTime;
+        currentAngle += rotationInput.x * rotateSpeed * Time.deltaTime;
 
-        Vector3 offset = Quaternion.Euler(0f, currentAngle, 0f) * Vector3.back * distanceFromPlayer;
+        Vector3 cameraOffset = Quaternion.Euler(0f, currentAngle, 0f) * offset * distanceFromPlayer;
 
-        transform.position = player.position + offset;
+        transform.position = player.position + cameraOffset;
         transform.LookAt(player.position);
     }
-
-    private void LateUpdate()
-    {
-        Vector3 move = player.transform.position + offset;
-        transform.position = Vector3.Lerp(transform.position, move, smoothSpeed * Time.deltaTime);
-    }
-
-
 
 }
