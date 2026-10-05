@@ -7,7 +7,7 @@ public class TalkOrRead : MonoBehaviour,Interactable
     public void OnInteract()
     {
         Debug.Log("talked");
-        if (DialogManager.dialogManager.talking)
+        if (!DialogManager.dialogManager.talking)
         {
             DialogManager.dialogManager.StartDialog(Dialog);
         }

@@ -93,6 +93,34 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Dialog test",
+            "id": "41630a6c-ac6e-4a4b-ad45-a3ed39074efb",
+            "actions": [
+                {
+                    "name": "Talk",
+                    "type": "Button",
+                    "id": "959c381c-cc23-47f4-ac24-898f0cd99842",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "119cae0b-4077-4b22-8fa1-2b9bba7241bf",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Talk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

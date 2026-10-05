@@ -30,6 +30,8 @@ public class DialogManager : MonoBehaviour
             Destroy(this);
         }
         dialog = new Queue<string>();
+        ClearDialog();
+        textBox.SetActive(false);
     }
 
     public void StartDialog(string[] text)
@@ -41,6 +43,7 @@ public class DialogManager : MonoBehaviour
         foreach(string line in text)
         {
             dialog.Enqueue(line);
+            Debug.Log($"added {line} to queue");
         }
         ContinueDialog();
 
