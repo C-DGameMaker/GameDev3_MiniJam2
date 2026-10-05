@@ -5,9 +5,13 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+    // Movement 
     Rigidbody playerRB;
     private Vector2 movementInput;
     [SerializeField] float movementSpeed = 5;
+
+    // Possession
+    [SerializeField] bool canPossess;
     private void Start()
     {
         if(playerRB == null)
