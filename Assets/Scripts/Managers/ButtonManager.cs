@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -12,5 +13,10 @@ public class ButtonManager : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("You Quit");
+    }
+
+    public void OnStartButton()
+    {
+        SceneManager.LoadScene("CharlieTestScene");
     }
 }
