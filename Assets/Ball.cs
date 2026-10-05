@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Ball : MonoBehaviour, Interactable
+public class Ball : MonoBehaviour, Possesable
 {
     private void Start()
     {
