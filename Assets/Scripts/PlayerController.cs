@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float movementSpeed = 5;
 
     // Possession
-    [SerializeField] bool canPossess;
+    public bool canPossess;
     private void Start()
     {
         if(playerRB == null)
