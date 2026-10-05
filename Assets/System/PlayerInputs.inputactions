@@ -234,7 +234,7 @@
                 {
                     "name": "",
                     "id": "02d810de-3e24-49d1-b154-1c905ad02ed2",
-                    "path": "<Mouse>/position",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard & Mouse",
