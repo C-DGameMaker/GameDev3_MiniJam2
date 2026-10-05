@@ -1,7 +1,11 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+/// <summary>
+/// Charlie Dobson
+/// 
+/// Player controller script
+/// </summary>
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
