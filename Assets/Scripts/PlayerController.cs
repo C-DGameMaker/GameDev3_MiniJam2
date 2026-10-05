@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
         playerRB.MovePosition(playerRB.position + move);
     }
 
+    #region Trigger Enter/Exit
     private void OnTriggerEnter(Collider other)
     {
         if(other.TryGetComponent(out IInteractable foundInteractable))
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour
             interactable = null;
         }
     }
+    #endregion
 
     // Interact
     public void OnInteract(InputAction.CallbackContext context)
