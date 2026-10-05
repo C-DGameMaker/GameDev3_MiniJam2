@@ -3,6 +3,11 @@ using UnityEngine.Rendering;
 
 public class ButtonManager : MonoBehaviour
 {
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
     public void OnQuitButton()
     {
         Application.Quit();
