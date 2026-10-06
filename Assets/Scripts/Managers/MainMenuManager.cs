@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class ButtonManager : MonoBehaviour
+public class MainMenuManager : MonoBehaviour
 {
     public GameObject creditsUI;
     private void Start()
@@ -13,7 +13,6 @@ public class ButtonManager : MonoBehaviour
     public void OnQuitButton()
     {
         Application.Quit();
-        Debug.Log("You Quit");
     }
 
     public void OnCreditsButton()

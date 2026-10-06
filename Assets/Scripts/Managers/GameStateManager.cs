@@ -41,10 +41,21 @@ public class GameStateManager : MonoBehaviour
                 break;
 
             case GameStates.MainMenu:
+                ServiceHubManager.Instance.timer.ResetTimer();
+                break;
+
+            case GameStates.Gameplay:
+                break;
+
+            case GameStates.Paused:
                 break;
 
             case GameStates.Lose:
-                Debug.Log("You lose");
+                ServiceHubManager.Instance.sceneManager.LoadScene("GameOverScene");
+                break;
+
+            case GameStates.Win:
+                ServiceHubManager.Instance.sceneManager.LoadScene("GameWinScene");
                 break;
 
         }

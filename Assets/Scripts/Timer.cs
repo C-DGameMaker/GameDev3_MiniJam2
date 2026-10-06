@@ -6,9 +6,6 @@ public class Timer : MonoBehaviour
     public float endTime;
     [SerializeField] float currentTime;
 
-    private void Awake()
-    {
-    }
     private void Update()
     {
        if(ServiceHubManager.Instance.gameStateManager.currentState == GameStates.Gameplay)
@@ -24,5 +21,10 @@ public class Timer : MonoBehaviour
         {
             ServiceHubManager.Instance.gameStateManager.SwitchGameStates(GameStates.Lose);
         }
+    }
+
+    public void ResetTimer()
+    {
+        currentTime = 0;
     }
 }

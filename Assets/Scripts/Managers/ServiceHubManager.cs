@@ -6,6 +6,7 @@ public class ServiceHubManager : MonoBehaviour
 
     public SceneManagement sceneManager;
     public GameStateManager gameStateManager;
+    public Timer timer;
 
     private void Awake()
     {
