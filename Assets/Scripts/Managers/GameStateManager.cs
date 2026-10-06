@@ -8,6 +8,8 @@ public enum GameStates
     Win,
     Lose,
     Paused,
+    Secret,
+
 
 }
 
@@ -56,6 +58,9 @@ public class GameStateManager : MonoBehaviour
 
             case GameStates.Win:
                 ServiceHubManager.Instance.sceneManager.LoadScene("GameWinScene");
+                break;
+
+            case GameStates.Secret:
                 break;
 
         }
