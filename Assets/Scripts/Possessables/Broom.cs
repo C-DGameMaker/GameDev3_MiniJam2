@@ -7,7 +7,7 @@ public class Broom : MonoBehaviour,Possessable
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Cam = GetComponent<Camera>();
+        Cam = FindAnyObjectByType<Camera>();
     }
     public void Action()
     {
