@@ -61,7 +61,7 @@ public class TestPossessScript : MonoBehaviour
         if (other.TryGetComponent(out Interactable foundInteractable))
         {
             currentInteractable = foundInteractable;
-
+            Debug.Log(currentInteractable);
 
 
 
@@ -69,6 +69,7 @@ public class TestPossessScript : MonoBehaviour
         if (other.TryGetComponent(out Possessable foundPossessable))
         {
             currentPossessable = foundPossessable;
+            Debug.Log(currentPossessable);
         }
     }
 
