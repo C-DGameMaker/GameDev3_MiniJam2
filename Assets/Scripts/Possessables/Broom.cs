@@ -12,7 +12,7 @@ public class Broom : MonoBehaviour,Possessable
         Debug.Log("interacted with " + this);
     }
     Vector2 move;
-    public float speed = 4;
+    public float speed = 10;
     public Rigidbody rb;
     public void Move(InputAction.CallbackContext context)
     {
