@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7516595886697791973}
   m_Layer: 0
   m_Name: Ball possesable
-  m_TagString: Untagged
+  m_TagString: Possessable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
