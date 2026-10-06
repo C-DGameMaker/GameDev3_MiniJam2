@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -24,6 +23,7 @@ public class ButtonManager : MonoBehaviour
 
     public void OnStartButton()
     {
-        SceneManager.LoadScene("CharlieTestScene");
+        ServiceHubManager.Instance.sceneManager.LoadScene("CharlieTestScene");
+        ServiceHubManager.Instance.gameStateManager.SwitchGameStates(GameStates.Gameplay);
     }
 }

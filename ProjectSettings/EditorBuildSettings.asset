@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/MainGameplayuSceme/MainMenu.unity
     guid: 29138822f21240f4c9042f487a70ed25
   - enabled: 1
     path: Assets/Scenes/CharlieTestScene.unity
