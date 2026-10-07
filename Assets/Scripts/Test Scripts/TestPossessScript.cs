@@ -6,7 +6,7 @@ public class TestPossessScript : MonoBehaviour
 {
     
     public Possessable possessedObject;
-    private Interactable currentInteractable;
+    private IInteractable currentInteractable;
 
     private Possessable currentPossessable;
     public void Move(InputAction.CallbackContext context)
@@ -33,7 +33,7 @@ public class TestPossessScript : MonoBehaviour
             else if (currentInteractable != null)
             {
                 //if not possessing an object trigger interactable object
-                currentInteractable.OnInteract();
+                currentInteractable.Interact();
             }
         }
     }
@@ -58,7 +58,7 @@ public class TestPossessScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Interactable foundInteractable))
+        if (other.TryGetComponent(out IInteractable foundInteractable))
         {
             currentInteractable = foundInteractable;
             Debug.Log(currentInteractable);
@@ -76,7 +76,7 @@ public class TestPossessScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent(out Interactable foundInteractable))
+        if (other.TryGetComponent(out IInteractable foundInteractable))
         {
             currentInteractable = null;
 
