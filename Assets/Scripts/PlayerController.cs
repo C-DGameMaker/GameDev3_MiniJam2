@@ -14,15 +14,19 @@ public class PlayerController : MonoBehaviour
     Rigidbody playerRB;
     private Vector2 movementInput;
     [SerializeField] float movementSpeed = 5;
+    public Camera Cam;
 
-    
-    
+
     public IInteractable interactable;
     private void Start()
     {
         if(playerRB == null)
         {
             playerRB = GetComponent<Rigidbody>();
+        }
+        if(Cam == null)
+        {
+            Cam = FindAnyObjectByType<Camera>();
         }
     }
 
@@ -48,6 +52,7 @@ public class PlayerController : MonoBehaviour
     private void HandlePlayerMovement()
     {
         Vector3 move = new Vector3(movementInput.x, 0 , movementInput.y) * movementSpeed * Time.deltaTime;
+        move = Quaternion.Euler(0, Cam.transform.eulerAngles.y, 0) * move;
         playerRB.MovePosition(playerRB.position + move);
     }
 

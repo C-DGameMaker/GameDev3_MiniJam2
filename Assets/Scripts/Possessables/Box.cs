@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Broom : MonoBehaviour,Possessable
+public class Box : MonoBehaviour, Possessable
 {
     public Camera Cam;
     private void Start()
@@ -14,7 +14,7 @@ public class Broom : MonoBehaviour,Possessable
         Debug.Log("interacted with " + this);
     }
     Vector2 move;
-    public float speed = 10;
+    public float speed = 4;
     public Rigidbody rb;
     public void Move(InputAction.CallbackContext context)
     {
@@ -24,7 +24,7 @@ public class Broom : MonoBehaviour,Possessable
     private void FixedUpdate()
     {
         Vector3 move3d = new Vector3(move.x, 0, move.y) * speed * Time.deltaTime;
-        move3d = Quaternion.Euler(0, Cam.transform.eulerAngles.y, 0) * move;
-        rb.AddForce(move3d * speed);
+        move3d = Quaternion.Euler(0, Cam.transform.eulerAngles.y, 0) * move3d;
+        rb.MovePosition(rb.position + move3d);
     }
 }
