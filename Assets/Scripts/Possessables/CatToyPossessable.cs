@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.Playables;
 
@@ -10,7 +11,8 @@ public class CatToyPossessable : MonoBehaviour,Possessable
         
     }
     public AudioSource SFX;
-    public PlayableDirector DoorOpenTimeline;
+    
+    public UnityEvent Sqeeking;
     // Update is called once per frame
     void Update()
     {
@@ -22,30 +24,13 @@ public class CatToyPossessable : MonoBehaviour,Possessable
     {
         Debug.Log("sqeeked");
         //SFX.Play();
-        if (CatCanHear)
-        {
-            Debug.Log("cat hear the toy");
-            DoorOpenTimeline.Play();
-        }
+        Sqeeking.Invoke();
     }
     
     public void Move(InputAction.CallbackContext context)
     {
 
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Cat"))
-        {
-            CatCanHear = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Cat"))
-        {
-            CatCanHear = false;
-        }
-    }
+    
     
 }
