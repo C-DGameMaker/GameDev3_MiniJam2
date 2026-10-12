@@ -8,6 +8,7 @@ TagManager:
   - Cat
   - CatToy
   - Bounce Cube
+  - BounceLockIn
   layers:
   - Default
   - TransparentFX
