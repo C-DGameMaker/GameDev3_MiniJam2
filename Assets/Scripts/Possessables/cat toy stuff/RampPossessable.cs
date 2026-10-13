@@ -38,11 +38,12 @@ public class RampPossessable : MonoBehaviour,Possessable
             {
                 if (ballCameFromAbove)
                 {
-                    rolltoDrawer.Play();
+                    rolltoDrawer.Play(); ballCameFromAbove = false;
                 }
                 else if (ballCameFromTheSide)
                 {
                     rollBackToDrawer.Play();
+                    ballCameFromTheSide = false;
                 }
             }
             else
@@ -50,6 +51,7 @@ public class RampPossessable : MonoBehaviour,Possessable
                 if (ballCameFromAbove)
                 {
                     rollBackToCarrier.Play();
+                    ballCameFromAbove = false;
                 }
             }
         }
