@@ -4,6 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public GameObject firstButton;
+
+    private void OnEnable()
+    {
+        ServiceHubManager.Instance.eventSystemManager.SetButton(firstButton);
+    }
     public void ResumeButton()
     {
         ServiceHubManager.Instance.gameStateManager.SwitchGameStates(GameStates.Gameplay);

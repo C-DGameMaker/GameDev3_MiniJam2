@@ -1029,6 +1029,7 @@ MonoBehaviour:
   gameStateManager: {fileID: 858383235}
   timer: {fileID: 216930537}
   uiManager: {fileID: 1212926269}
+  eventSystemManager: {fileID: 840214257}
 --- !u!4 &650221711
 Transform:
   m_ObjectHideFlags: 0
@@ -1046,8 +1047,6 @@ Transform:
   - {fileID: 858383236}
   - {fileID: 1212926270}
   - {fileID: 1173094524}
-  - {fileID: 1569413577}
-  - {fileID: 1609555968}
   - {fileID: 844783407}
   - {fileID: 216930536}
   m_Father: {fileID: 0}
@@ -1063,6 +1062,7 @@ GameObject:
   - component: {fileID: 840214254}
   - component: {fileID: 840214256}
   - component: {fileID: 840214255}
+  - component: {fileID: 840214257}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1131,6 +1131,18 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 94280402}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &840214257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840214253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210207484f4a9f54896af4d4d1b0fffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventSystemManager
 --- !u!1 &844783406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,6 +1188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c783e7a91f3a44f8245310dada3f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
+  firstButton: {fileID: 2020348120}
 --- !u!1 &856057086
 GameObject:
   m_ObjectHideFlags: 0
@@ -2066,9 +2079,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc5d52b0d362614296e0a7d7d8712ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
-  timerUI: {fileID: 1640903344}
-  pausedUI: {fileID: 18364545}
-  mainMenuUI: {fileID: 0}
+  timerUI: {fileID: 216930535}
+  pausedUI: {fileID: 844783406}
 --- !u!4 &1212926270
 Transform:
   m_ObjectHideFlags: 0
@@ -2255,7 +2267,7 @@ RectTransform:
   - {fileID: 419284795}
   - {fileID: 1200381331}
   - {fileID: 265832857}
-  m_Father: {fileID: 650221711}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2430,6 +2442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonManager
   creditsUI: {fileID: 265832856}
+  firstButton: {fileID: 94280402}
 --- !u!4 &1609555968
 Transform:
   m_ObjectHideFlags: 0
@@ -2439,11 +2452,11 @@ Transform:
   m_GameObject: {fileID: 1609555966}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -937.01794, y: -491.75952, z: -220.1451}
+  m_LocalPosition: {x: 1.0073242, y: 0.6286621, z: -1.447403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 650221711}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1640903344
 GameObject:
@@ -3192,5 +3205,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 856057090}
+  - {fileID: 1569413577}
+  - {fileID: 1609555968}
   - {fileID: 1139461767}
   - {fileID: 650221711}

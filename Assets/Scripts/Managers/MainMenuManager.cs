@@ -4,11 +4,14 @@ using UnityEngine.Rendering;
 public class MainMenuManager : MonoBehaviour
 {
     public GameObject creditsUI;
+    public GameObject firstButton;
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         creditsUI.SetActive(false);
+
+        ServiceHubManager.Instance.eventSystemManager.SetButton(firstButton);
     }
     public void OnQuitButton()
     {

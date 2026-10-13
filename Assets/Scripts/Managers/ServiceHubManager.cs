@@ -9,6 +9,8 @@ public class ServiceHubManager : MonoBehaviour
     public Timer timer;
     public UIManager uiManager;
 
+    public EventSystemManager eventSystemManager;
+
     private void Awake()
     {
         #region Singleton Pattern
