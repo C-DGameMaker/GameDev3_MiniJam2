@@ -759,7 +759,19 @@ MonoBehaviour:
     m_ActionId: 04f5e4ca-7b5a-4c4c-8000-9d4c6f999b4c
     m_ActionName: GameMovement/Look
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1561665620}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: PauseToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: d49c4448-6117-4fe1-991c-eb4b7e5fc7ba
     m_ActionName: 'GameMovement/Pause[/Keyboard/escape]'
   - m_PersistentCalls:
@@ -780,8 +792,20 @@ MonoBehaviour:
     m_ActionName: 'GameMovement/Interact[/Keyboard/e]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: d628849f-b131-4508-b098-6366be9ae0ce
-    m_ActionName: UI/New action
+    m_ActionId: 9ae2e06e-f732-4f49-87d0-0f76c877f951
+    m_ActionName: 'UI/Navigate[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5323dc53-091b-4f34-9b2e-3db5d2b8e147
+    m_ActionName: 'UI/Submit[/Keyboard/enter]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 82cb1a6b-f131-4974-88fc-34596ab25f37
+    m_ActionName: 'UI/Cancel[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 95f4e041-c77b-4d58-af19-2868961f2bf7
+    m_ActionName: 'UI/Click[/Mouse/leftButton,/Keyboard/e]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard & Mouse
   m_DefaultActionMap: GameMovement

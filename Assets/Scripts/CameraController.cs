@@ -18,8 +18,6 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         offset = transform.position;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     public void RotateCamera(InputAction.CallbackContext context)

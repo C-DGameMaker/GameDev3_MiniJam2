@@ -29,6 +29,7 @@ public class GameStateManager : MonoBehaviour
         currentState = newGameState;
 
         OnStateChange(newGameState);
+        Debug.Log(currentState);
     }
 
     private void OnStateChange(GameStates newState)
@@ -43,21 +44,28 @@ public class GameStateManager : MonoBehaviour
                 break;
 
             case GameStates.MainMenu:
-                ServiceHubManager.Instance.timer.ResetTimer();
+                ServiceHubManager.Instance.uiManager.HideAllUI();
                 break;
 
             case GameStates.Gameplay:
+                ServiceHubManager.Instance.uiManager.TimerActive();
+                ServiceHubManager.Instance.uiManager.HidePauseMenuUI();
+                Time.timeScale = 1;
                 break;
 
             case GameStates.Paused:
+                ServiceHubManager.Instance.uiManager.ShowPauseMenuUI();
+                Time.timeScale = 0;
                 break;
 
             case GameStates.Lose:
                 ServiceHubManager.Instance.sceneManager.LoadScene("GameOverScene");
+                ServiceHubManager.Instance.timer.ResetTimer();
                 break;
 
             case GameStates.Win:
                 ServiceHubManager.Instance.sceneManager.LoadScene("GameWinScene");
+                ServiceHubManager.Instance.timer.ResetTimer();
                 break;
 
             case GameStates.Secret:
