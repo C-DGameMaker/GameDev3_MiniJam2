@@ -12,6 +12,7 @@ public class RampPossessable : MonoBehaviour,Possessable
     public bool ballCameFromAbove;
     public bool ballCameFromTheSide;
     public bool rotated;
+    
     public void Move(InputAction.CallbackContext context)
     {
 
@@ -27,6 +28,30 @@ public class RampPossessable : MonoBehaviour,Possessable
         {
             rotated = true;
             rotate.Play();
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("CatToy"))
+        {
+            if (rotated)
+            {
+                if (ballCameFromAbove)
+                {
+                    rolltoDrawer.Play();
+                }
+                else if (ballCameFromTheSide)
+                {
+                    rollBackToDrawer.Play();
+                }
+            }
+            else
+            {
+                if (ballCameFromAbove)
+                {
+                    rollBackToCarrier.Play();
+                }
+            }
         }
     }
 }
