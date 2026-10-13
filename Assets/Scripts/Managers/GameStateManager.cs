@@ -45,6 +45,8 @@ public class GameStateManager : MonoBehaviour
 
             case GameStates.MainMenu:
                 ServiceHubManager.Instance.uiManager.HideAllUI();
+                ServiceHubManager.Instance.timer.ResetTimer();
+                Time.timeScale = 1;
                 break;
 
             case GameStates.Gameplay:
