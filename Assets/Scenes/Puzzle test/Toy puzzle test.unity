@@ -972,6 +972,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 431455885}
+  - component: {fileID: 431455886}
   m_Layer: 0
   m_Name: door pivot
   m_TagString: Untagged
@@ -995,6 +996,28 @@ Transform:
   - {fileID: 271742436}
   m_Father: {fileID: 1285985977}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &431455886
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431455884}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &437050228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,6 +1056,57 @@ Transform:
   - {fileID: 8802498683052807680}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &516939965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 516939966}
+  - component: {fileID: 516939967}
+  m_Layer: 0
+  m_Name: no ball timeline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &516939966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516939965}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.6392701, y: 0.077, z: 0.27416015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1285985977}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &516939967
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516939965}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: cbeffe30670ca404ca6940771ba2ee84, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 8311605117050626097, guid: cbeffe30670ca404ca6940771ba2ee84, type: 2}
+    value: {fileID: 431455886}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &528627557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,6 +1482,59 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &620133185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 620133186}
+  - component: {fileID: 620133187}
+  m_Layer: 0
+  m_Name: Ball moving timeline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &620133186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620133185}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.6392701, y: 0.077, z: 0.27416015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1285985977}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &620133187
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620133185}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: b1d6042d1702ae2458376b477d4e6fdf, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 8311605117050626097, guid: b1d6042d1702ae2458376b477d4e6fdf, type: 2}
+    value: {fileID: 431455886}
+  - key: {fileID: 72325742055244503, guid: b1d6042d1702ae2458376b477d4e6fdf, type: 2}
+    value: {fileID: 1398679462}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &751061099
 GameObject:
   m_ObjectHideFlags: 0
@@ -2621,6 +2748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1285985977}
   - component: {fileID: 1285985976}
+  - component: {fileID: 1285985978}
   - component: {fileID: 1285985975}
   - component: {fileID: 1285985974}
   - component: {fileID: 1285985973}
@@ -3087,8 +3215,25 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 431455885}
+  - {fileID: 516939966}
+  - {fileID: 620133186}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1285985978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285985971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0980c884e7e44f944b6e87e2e3bb3791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ToyMovingPossessable
+  moveBall: {fileID: 0}
+  tryToMoveBallWithoutBall: {fileID: 0}
+  ballIsClose: 0
 --- !u!1 &1291727774
 GameObject:
   m_ObjectHideFlags: 0
@@ -4950,7 +5095,7 @@ Transform:
   m_GameObject: {fileID: 1754238125}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 1.611, y: 0.672, z: -3.8}
+  m_LocalPosition: {x: 1.611, y: 0.672, z: -4.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
