@@ -538,6 +538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 216941447}
   - component: {fileID: 216941448}
+  - component: {fileID: 216941449}
   m_Layer: 0
   m_Name: upper trigger
   m_TagString: Untagged
@@ -581,6 +582,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &216941449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216941446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d22f967d4660024993640c1ecc824cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RampDirectionTrigger
+  topTrigger: 1
+  ramp: {fileID: 1754238132}
 --- !u!1 &271742435
 GameObject:
   m_ObjectHideFlags: 0
@@ -6025,6 +6040,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1607790723}
   - component: {fileID: 1607790724}
+  - component: {fileID: 1607790725}
   m_Layer: 0
   m_Name: side trigger
   m_TagString: Untagged
@@ -6068,6 +6084,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1607790725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607790722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d22f967d4660024993640c1ecc824cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RampDirectionTrigger
+  topTrigger: 0
+  ramp: {fileID: 1754238132}
 --- !u!43 &1633447706
 Mesh:
   m_ObjectHideFlags: 0
@@ -6730,11 +6760,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e3efff8b192e64cbfc391a539c565e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  rotate: {fileID: 0}
-  rotateBack: {fileID: 0}
-  rollBackToCarrier: {fileID: 0}
-  rolltoDrawer: {fileID: 0}
-  rollBackToDrawer: {fileID: 0}
+  rotate: {fileID: 636964067}
+  rotateBack: {fileID: 1934075190}
+  rollBackToCarrier: {fileID: 1315425005}
+  rolltoDrawer: {fileID: 933971862}
+  rollBackToDrawer: {fileID: 59184959}
   ballCameFromAbove: 0
   ballCameFromTheSide: 0
   rotated: 0
