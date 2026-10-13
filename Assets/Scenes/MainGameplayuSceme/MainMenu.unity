@@ -1046,6 +1046,8 @@ Transform:
   - {fileID: 858383236}
   - {fileID: 1212926270}
   - {fileID: 1173094524}
+  - {fileID: 1569413577}
+  - {fileID: 1609555968}
   - {fileID: 844783407}
   - {fileID: 216930536}
   m_Father: {fileID: 0}
@@ -2066,6 +2068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   timerUI: {fileID: 1640903344}
   pausedUI: {fileID: 18364545}
+  mainMenuUI: {fileID: 0}
 --- !u!4 &1212926270
 Transform:
   m_ObjectHideFlags: 0
@@ -2252,7 +2255,7 @@ RectTransform:
   - {fileID: 419284795}
   - {fileID: 1200381331}
   - {fileID: 265832857}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 650221711}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2435,12 +2438,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609555966}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.00735, y: 0.62865, z: -1.4474}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -937.01794, y: -491.75952, z: -220.1451}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 650221711}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1640903344
 GameObject:
@@ -3136,7 +3139,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 844783408}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: ResumeButton
+        m_MethodName: MainMenuButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3190,6 +3193,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 856057090}
   - {fileID: 1139461767}
-  - {fileID: 1569413577}
-  - {fileID: 1609555968}
   - {fileID: 650221711}

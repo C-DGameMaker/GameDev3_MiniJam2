@@ -45,6 +45,7 @@ public class GameStateManager : MonoBehaviour
 
             case GameStates.MainMenu:
                 ServiceHubManager.Instance.uiManager.HideAllUI();
+                ServiceHubManager.Instance.uiManager.ShowMainMenu();
                 break;
 
             case GameStates.Gameplay:
@@ -54,6 +55,7 @@ public class GameStateManager : MonoBehaviour
                 break;
 
             case GameStates.Paused:
+                ServiceHubManager.Instance.uiManager.HideAllUI();
                 ServiceHubManager.Instance.uiManager.ShowPauseMenuUI();
                 Time.timeScale = 0;
                 break;

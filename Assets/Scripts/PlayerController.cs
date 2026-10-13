@@ -84,6 +84,7 @@ public class PlayerController : MonoBehaviour
             ServiceHubManager.Instance.gameStateManager.SwitchGameStates(GameStates.Gameplay);
             Time.timeScale = 1;
         }
+
     }
 
 }
