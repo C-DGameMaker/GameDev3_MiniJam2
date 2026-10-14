@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 /// <summary>
@@ -13,9 +14,9 @@ public class PlayerController : MonoBehaviour
     Rigidbody playerRB;
     private Vector2 movementInput;
     [SerializeField] float movementSpeed = 5;
+    public Camera Cam;
 
-    // Possession
-    public bool canPossess;
+
     public IInteractable interactable;
     private void Start()
     {
@@ -23,11 +24,25 @@ public class PlayerController : MonoBehaviour
         {
             playerRB = GetComponent<Rigidbody>();
         }
+        if(Cam == null)
+        {
+            Cam = FindAnyObjectByType<Camera>();
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        movementInput = context.ReadValue<Vector2>();
+        if (possessedObject != null)
+        {
+            possessedObject.Move(context);
+            movementInput = Vector2.zero;
+        }
+        else
+        {
+            movementInput = context.ReadValue<Vector2>();
+        }
+        
+
     }
 
     private void Update()
@@ -38,6 +53,7 @@ public class PlayerController : MonoBehaviour
     private void HandlePlayerMovement()
     {
         Vector3 move = new Vector3(movementInput.x, 0 , movementInput.y) * movementSpeed * Time.deltaTime;
+        move = Quaternion.Euler(0, Cam.transform.eulerAngles.y, 0) * move;
         playerRB.MovePosition(playerRB.position + move);
     }
 
@@ -48,6 +64,11 @@ public class PlayerController : MonoBehaviour
         {
             interactable = foundInteractable;
         }
+        if (other.TryGetComponent(out Possessable foundPossessable))
+        {
+            currentPossessable = foundPossessable;
+            Debug.Log(currentPossessable);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -55,36 +76,59 @@ public class PlayerController : MonoBehaviour
         {
             interactable = null;
         }
+        if (other.TryGetComponent(out Possessable foundPossessable))
+        {
+            currentPossessable = null;
+        }
     }
     #endregion
 
     // Interact
     public void OnInteract(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        
+        if (context.performed)
         {
-            if(interactable != null)
+            if (possessedObject != null)
+            {
+                //triggers action of possessed object
+                possessedObject.Action();
+            }
+            else if (interactable != null)
             {
                 interactable.Interact();
             }
         }
     }
+    
+    //possession mechanics
+    public Possessable possessedObject;
+    
 
-    public void PauseToggle()
+    private Possessable currentPossessable;
+    
+    
+
+    public void Possess(InputAction.CallbackContext context)
     {
-        if (ServiceHubManager.Instance.gameStateManager.currentState == GameStates.Gameplay)
+        if (context.performed)
         {
-            if (ServiceHubManager.Instance.gameStateManager.currentState == GameStates.Paused) return;
-            ServiceHubManager.Instance.gameStateManager.SwitchGameStates(GameStates.Paused);
-            Time.timeScale = 0;
+            if (possessedObject != null)
+            {
+                //if already possessing object stops possessing it
+                Debug.Log("Stopped possessing" + possessedObject);
+                possessedObject = null;
+            }
+            else if (currentPossessable != null)
+            {
+                //if possessable is in range then possess object
+                Debug.Log("possessed " + currentPossessable);
+                possessedObject = currentPossessable;
+            }
         }
-        else if (ServiceHubManager.Instance.gameStateManager.currentState == GameStates.Paused)
-        {
-            if (ServiceHubManager.Instance.gameStateManager.currentState == GameStates.Gameplay) return;
-            ServiceHubManager.Instance.gameStateManager.SwitchGameStates(GameStates.Gameplay);
-            Time.timeScale = 1;
-        }
-
     }
+    
 
+
+    
 }

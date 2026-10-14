@@ -23,7 +23,7 @@ public class Broom : MonoBehaviour,Possessable
     }
     private void FixedUpdate()
     {
-        Vector3 move3d = new Vector3(move.x, 0, move.y);
+        Vector3 move3d = new Vector3(move.x, 0, move.y) * speed * Time.deltaTime;
         move3d = Quaternion.Euler(0, Cam.transform.eulerAngles.y, 0) * move;
         rb.AddForce(move3d * speed);
     }

@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class TalkOrRead : MonoBehaviour,Interactable
+public class TalkOrRead : MonoBehaviour,IInteractable
 {
     [TextArea]public string[] Dialog;
 
-    public void OnInteract()
+    public void Interact()
     {
         Debug.Log("talked");
         if (!DialogManager.dialogManager.talking)
