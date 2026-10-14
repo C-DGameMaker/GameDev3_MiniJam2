@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 movementInput;
     [SerializeField] float movementSpeed = 5;
     public Camera Cam;
-
+    public GameObject possessFX;
 
     public IInteractable interactable;
     private void Start()
@@ -48,6 +48,16 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         HandlePlayerMovement();
+        //sets partical effects postion to current target possessable, if there is none then hides effect
+        if(possessedObject == null && currentPossessable != null)
+        {
+            possessFX.SetActive(true);
+            possessFX.transform.position =  currentPossessableGO.transform.position;
+        }
+        else
+        {
+            possessFX.SetActive(false);
+        }
     }
 
     private void HandlePlayerMovement()
@@ -82,6 +92,7 @@ public class PlayerController : MonoBehaviour
         if (other.TryGetComponent(out Possessable foundPossessable))
         {
             currentPossessable = foundPossessable;
+            currentPossessableGO = other.gameObject;
             Debug.Log(currentPossessable);
         }
     }
@@ -94,6 +105,7 @@ public class PlayerController : MonoBehaviour
         if (other.TryGetComponent(out Possessable foundPossessable))
         {
             currentPossessable = null;
+            currentPossessableGO = null;
         }
     }
     #endregion
@@ -121,7 +133,7 @@ public class PlayerController : MonoBehaviour
     
 
     private Possessable currentPossessable;
-    
+    private GameObject currentPossessableGO;
     
 
     public void Possess(InputAction.CallbackContext context)
