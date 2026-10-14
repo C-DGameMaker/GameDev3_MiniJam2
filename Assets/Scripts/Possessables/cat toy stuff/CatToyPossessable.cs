@@ -23,7 +23,7 @@ public class CatToyPossessable : MonoBehaviour,Possessable
     public void Action()
     {
         Debug.Log("sqeeked");
-        //SFX.Play();
+        SFX.Play();
         Sqeeking.Invoke();
     }
     
