@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
         if (possessedObject != null)
         {
             possessedObject.Move(context);
+            movementInput = Vector2.zero;
         }
         else
         {
