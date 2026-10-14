@@ -25,7 +25,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnStartButton()
     {
-        ServiceHubManager.Instance.sceneManager.LoadScene("CharlieTestScene");
+        ServiceHubManager.Instance.sceneManager.LoadScene("Gameplay");
         ServiceHubManager.Instance.gameStateManager.SwitchGameStates(GameStates.Gameplay);
     }
 }

@@ -57,6 +57,21 @@ public class PlayerController : MonoBehaviour
         playerRB.MovePosition(playerRB.position + move);
     }
 
+    public void PauseToggle()
+    {
+        if (ServiceHubManager.Instance.gameStateManager.currentState == GameStates.Gameplay)
+        {
+            if (ServiceHubManager.Instance.gameStateManager.currentState == GameStates.Paused) return;
+            ServiceHubManager.Instance.gameStateManager.SwitchGameStates(GameStates.Paused);
+        }
+        else if (ServiceHubManager.Instance.gameStateManager.currentState == GameStates.Paused)
+        {
+            if (ServiceHubManager.Instance.gameStateManager.currentState == GameStates.Gameplay) return;
+            ServiceHubManager.Instance.gameStateManager.SwitchGameStates(GameStates.Gameplay);
+        }
+
+    }
+
     #region Trigger Enter/Exit
     private void OnTriggerEnter(Collider other)
     {
