@@ -30,30 +30,28 @@ public class RampPossessable : MonoBehaviour,Possessable
             rotate.Play();
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    public void RollBall()
     {
-        if (collision.gameObject.CompareTag("CatToy"))
+        if (rotated)
         {
-            if (rotated)
+            if (ballCameFromAbove)
             {
-                if (ballCameFromAbove)
-                {
-                    rolltoDrawer.Play(); ballCameFromAbove = false;
-                }
-                else if (ballCameFromTheSide)
-                {
-                    rollBackToDrawer.Play();
-                    ballCameFromTheSide = false;
-                }
+                rolltoDrawer.Play(); ballCameFromAbove = false;
             }
-            else
+            else if (ballCameFromTheSide)
             {
-                if (ballCameFromAbove)
-                {
-                    rollBackToCarrier.Play();
-                    ballCameFromAbove = false;
-                }
+                rollBackToDrawer.Play();
+                ballCameFromTheSide = false;
+            }
+        }
+        else
+        {
+            if (ballCameFromAbove)
+            {
+                rollBackToCarrier.Play();
+                ballCameFromAbove = false;
             }
         }
     }
+    
 }
