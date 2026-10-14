@@ -32,6 +32,10 @@ public class RampPossessable : MonoBehaviour,Possessable
     }
     public void RollBall()
     {
+        if (ballCameFromTheSide)
+        {
+            ballCameFromAbove = false;
+        }
         if (rotated)
         {
             if (ballCameFromAbove)
