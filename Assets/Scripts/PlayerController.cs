@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float movementSpeed = 5;
     public Camera Cam;
     public GameObject possessFX;
+    public GameObject activePossessFX;
 
     public IInteractable interactable;
     private void Start()
@@ -54,9 +55,18 @@ public class PlayerController : MonoBehaviour
             possessFX.SetActive(true);
             possessFX.transform.position =  currentPossessableGO.transform.position;
         }
-        else
+        else if(possessFX.activeSelf)
         {
             possessFX.SetActive(false);
+        }
+        if(possessedObject != null)
+        {
+            activePossessFX.SetActive(true);
+            activePossessFX.transform.position = possessedObjectGO.transform.position;
+        }
+        else if (activePossessFX.activeSelf)
+        {
+            activePossessFX.SetActive(false);
         }
     }
 
@@ -130,7 +140,7 @@ public class PlayerController : MonoBehaviour
     
     //possession mechanics
     public Possessable possessedObject;
-    
+    private GameObject possessedObjectGO;
 
     private Possessable currentPossessable;
     private GameObject currentPossessableGO;
@@ -145,12 +155,14 @@ public class PlayerController : MonoBehaviour
                 //if already possessing object stops possessing it
                 Debug.Log("Stopped possessing" + possessedObject);
                 possessedObject = null;
+                possessedObjectGO = null;
             }
             else if (currentPossessable != null)
             {
                 //if possessable is in range then possess object
                 Debug.Log("possessed " + currentPossessable);
                 possessedObject = currentPossessable;
+                possessedObjectGO = currentPossessableGO;
             }
         }
     }
