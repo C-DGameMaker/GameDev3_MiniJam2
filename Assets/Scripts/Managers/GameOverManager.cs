@@ -10,7 +10,7 @@ public class GameOverManager : MonoBehaviour
     }
     public void RetryButton()
     {
-        ServiceHubManager.Instance.sceneManager.LoadScene("");
+        ServiceHubManager.Instance.sceneManager.LoadScene("Gameplay");
         ServiceHubManager.Instance.gameStateManager.SwitchGameStates(GameStates.Gameplay);
     }
 
