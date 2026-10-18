@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public Camera Cam;
     public GameObject possessFX;
     public GameObject activePossessFX;
+    private int IsWalkingHash = Animator.StringToHash("IsWalking");
+    [SerializeField] Animator _playerAnimator;
 
     public GameObject interactPopUp;
 
@@ -48,6 +50,23 @@ public class PlayerController : MonoBehaviour
         }
         
 
+    }
+
+    private void FixedUpdate()
+    {
+        HandlePlayerAnimation();
+    }
+
+    private void HandlePlayerAnimation()
+    {
+        if (movementInput != Vector2.zero)
+        {
+            _playerAnimator.SetBool(IsWalkingHash, true);
+        }
+        else
+        {
+            _playerAnimator.SetBool(IsWalkingHash, false);
+        }
     }
 
     private void Update()
