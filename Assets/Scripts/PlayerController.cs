@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public GameObject possessFX;
     public GameObject activePossessFX;
 
+    public GameObject interactPopUp;
+
     public IInteractable interactable;
     private void Start()
     {
@@ -29,6 +31,8 @@ public class PlayerController : MonoBehaviour
         {
             Cam = FindAnyObjectByType<Camera>();
         }
+
+        interactPopUp.SetActive(false);
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -98,6 +102,7 @@ public class PlayerController : MonoBehaviour
         if(other.TryGetComponent(out IInteractable foundInteractable))
         {
             interactable = foundInteractable;
+            interactPopUp.SetActive(true);
         }
         if (other.TryGetComponent(out Possessable foundPossessable))
         {
@@ -111,6 +116,7 @@ public class PlayerController : MonoBehaviour
         if (other.TryGetComponent(out IInteractable foundInteractable))
         {
             interactable = null;
+            interactPopUp.SetActive(false);
         }
         if (other.TryGetComponent(out Possessable foundPossessable))
         {
